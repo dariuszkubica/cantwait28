@@ -15,7 +15,11 @@ class AuthGate extends StatelessWidget {
       builder: (context, snapshot) {
         // User is not signed in
         if (!snapshot.hasData) {
-          return const SignInScreen(providerConfigs: []);
+          return const SignInScreen(
+            providerConfigs: [
+              EmailProviderConfiguration(),
+            ],
+          );
         }
 
         // Render your application if authenticated
